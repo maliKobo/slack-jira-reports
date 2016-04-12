@@ -96,7 +96,7 @@ def format(item):
   if item[2] > 0:
     format += pad("+%i" % item[2], DELTA_PADDING)
   elif item[2] < 0:
-    format += pad("-%i" % item[2], DELTA_PADDING)
+    format += pad("-%i" % abs(item[2]), DELTA_PADDING)
   else:
     format += pad("", DELTA_PADDING)
   
