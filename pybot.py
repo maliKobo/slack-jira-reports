@@ -21,9 +21,9 @@ os.chdir(WORKING_DIR)
 
 url = "https://feedback.kobobooks.com/sr/jira.issueviews:searchrequest-excel-"+JIRA_FIELDS+"-fields/"+JIRA_SEARCH_FILTER_ID+"/SearchRequest-"+JIRA_SEARCH_FILTER_ID+".xls?tempMax=1000&os_username="+JIRA_USERNAME+"&os_password=" + JIRA_PASSWORD
 
-#f = open(TEMP_DOWNLOADED_FILE, "wb")
-#f.write(urllib2.urlopen(url).read())
-#f.close()
+f = open(TEMP_DOWNLOADED_FILE, "wb")
+f.write(urllib2.urlopen(url).read())
+f.close()
 
 f = open(TEMP_DOWNLOADED_FILE, "r")
 soup = BeautifulSoup(f, "html.parser")
