@@ -138,19 +138,19 @@ s.close()
 
 bug_stats = read_stats(STATS_FILE_BUGS)
 if len(bug_stats) > 1:
-  bugs_new[2]      = bug_stats[-1][1] - bug_stats[-2][1]
-  bugs_progress[2] = bug_stats[-1][2] - bug_stats[-2][2]
-  bugs_resolved[2] = bug_stats[-1][3] - bug_stats[-2][3]
-  bugs_reopened[2] = bug_stats[-1][4] - bug_stats[-2][4]
-  bugs_closed[2]   = bug_stats[-1][5] - bug_stats[-2][5]
+  bugs_new[2]      = int(bug_stats[-1][1]) - int(bug_stats[-2][1])
+  bugs_progress[2] = int(bug_stats[-1][2]) - int(bug_stats[-2][2])
+  bugs_resolved[2] = int(bug_stats[-1][3]) - int(bug_stats[-2][3])
+  bugs_reopened[2] = int(bug_stats[-1][4]) - int(bug_stats[-2][4])
+  bugs_closed[2]   = int(bug_stats[-1][5]) - int(bug_stats[-2][5])
 
 story_stats = read_stats(STATS_FILE_STORIES)
 if len(story_stats) > 1:
-  stories_new[2]      = bug_stats[-1][1] - bug_stats[-2][1]
-  stories_progress[2] = bug_stats[-1][2] - bug_stats[-2][2]
-  stories_resolved[2] = bug_stats[-1][3] - bug_stats[-2][3]
-  stories_reopened[2] = bug_stats[-1][4] - bug_stats[-2][4]
-  stories_closed[2]   = bug_stats[-1][5] - bug_stats[-2][5]
+  stories_new[2]      = int(bug_stats[-1][1]) - int(bug_stats[-2][1])
+  stories_progress[2] = int(bug_stats[-1][2]) - int(bug_stats[-2][2])
+  stories_resolved[2] = int(bug_stats[-1][3]) - int(bug_stats[-2][3])
+  stories_reopened[2] = int(bug_stats[-1][4]) - int(bug_stats[-2][4])
+  stories_closed[2]   = int(bug_stats[-1][5]) - int(bug_stats[-2][5])
 
 
 slackMsg = "*Issues Status for v7.0*\n"
