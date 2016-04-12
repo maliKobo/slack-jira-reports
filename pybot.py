@@ -151,12 +151,16 @@ if len(bug_stats) > 1:
 
 story_stats = read_stats(STATS_FILE_STORIES)
 if len(story_stats) > 1:
-  stories_new[2]      = int(bug_stats[-1][1]) - int(bug_stats[-2][1])
-  stories_progress[2] = int(bug_stats[-1][2]) - int(bug_stats[-2][2])
-  stories_resolved[2] = int(bug_stats[-1][3]) - int(bug_stats[-2][3])
-  stories_reopened[2] = int(bug_stats[-1][4]) - int(bug_stats[-2][4])
-  stories_closed[2]   = int(bug_stats[-1][5]) - int(bug_stats[-2][5])
-
+  stories_new[2]      = int(story_stats[-1][1]) - int(story_stats[-2][1])
+  stories_progress[2] = int(story_stats[-1][2]) - int(story_stats[-2][2])
+  stories_resolved[2] = int(story_stats[-1][3]) - int(story_stats[-2][3])
+  stories_reopened[2] = int(story_stats[-1][4]) - int(story_stats[-2][4])
+  stories_closed[2]   = int(story_stats[-1][5]) - int(story_stats[-2][5])
+  
+  num_stories_last = int(story_stats[-2][1]) + int(story_stats[-2][2]) + int(story_stats[-2][3]) + int(story_stats[-2][4]) + int(story_stats[-2][5])
+  numStories[2] = numStories[0] - num_stories_last
+  stories_left_last = num_stories_last - int(story_stats[-2][5])
+  stories_left[2] = stories_left[0] - stories_left_last
 
 slackMsg = "*Issues Status for v7.0*\n"
 slackMsg += "```\n"
