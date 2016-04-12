@@ -143,6 +143,11 @@ if len(bug_stats) > 1:
   bugs_resolved[2] = int(bug_stats[-1][3]) - int(bug_stats[-2][3])
   bugs_reopened[2] = int(bug_stats[-1][4]) - int(bug_stats[-2][4])
   bugs_closed[2]   = int(bug_stats[-1][5]) - int(bug_stats[-2][5])
+  
+  num_bugs_last = int(bug_stats[-2][1]) + int(bug_stats[-2][2]) + int(bug_stats[-2][3]) + int(bug_stats[-2][4]) + int(bug_stats[-2][5])
+  numBugs[2] = numBugs[0] - num_bugs_last
+  bugs_left_last = num_bugs_last - int(bug_stats[-2][5])
+  bugs_left[2] = bugs_left[0] - bugs_left_last
 
 story_stats = read_stats(STATS_FILE_STORIES)
 if len(story_stats) > 1:
