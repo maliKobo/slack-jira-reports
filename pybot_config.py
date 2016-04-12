@@ -12,6 +12,7 @@ JIRA_FIELDS = "all" # should be either "all" or "current" based on whether you w
 
 WORKING_DIR = r"" # The location where this script will download temporary files. Any files in this directory with the names below will get overridden. e.g. /Users/mali/
 TEMP_DOWNLOADED_FILE = "temp"
-STATS_FILE = "stats.txt"
+STATS_FILE_BUGS = "bug_stats.txt"
+STATS_FILE_STORIES = "story_stats.txt"
 
 ########################
